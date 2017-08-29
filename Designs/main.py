@@ -1,6 +1,9 @@
 '''driver file for the Myshop application'''
-from flask import Flask,redirect,url_for,request,render_template
+from flask import Flask,redirect,url_for,request,render_template,session,flash
+from person import Person
+user=Person()
 app=Flask(__name__)
+app.secret_key='dfkdfjnhfubvhppnhjr'
 @app.route('/add_shopping_list_item')
 def add_shopping_list_item():
     pass
@@ -19,20 +22,51 @@ def delete_shopping_list_item():
 
 @app.route('/homepage')
 def homepage():
-    pass
-@app.route('/start')
-def start():
+    flash('Registration success. Now logged in.')
+    return render_template('homepage.html')
+    
+
+@app.route('/')
+def sarter():
     return render_template('login.html')
+    
 
 
-@app.route('/login')
+@app.route('/login',methods=['POST','GET'])
 def login():
-    return render_template('login.html')
-    pass
+    if request.method=='POST':
 
-@app.route('/registration')
+        #username=session['username']
+        id=request.form
+        username=id['username']
+        password=id['password']
+        #if username=='name':
+        #if username in user.validator() and password in user.validator():
+        return redirect(url_for('homepage'))
+    else:
+
+        #flash error message
+        #flash('Wrong Login credentials')
+
+        return redirect(url_for('/'))
+
+@app.route('/usereg')
+def usereg():
+    return render_template('registration.html')
+    
+
+@app.route('/registration',methods=['POST','GET'])
 def registration():
-    pass
+    if request.method=='POST':
+        details=request.form
+        username=details['username']
+        emailaddress=details['emailaddress']
+        password=details['password']
+        user.register(username,emailaddress,password)
+        return redirect(url_for('homepage'))
+    else:
+        var1=flash('Registration failed due to Internal server error')
+    return redirect(url_for('usereg'))
 
 @app.route('/shared_shopping_lists')
 def shared_shopping_lists():
