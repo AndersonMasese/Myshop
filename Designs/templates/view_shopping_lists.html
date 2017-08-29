@@ -37,14 +37,48 @@
   <a href="">Delete items in shopping list</a>
   <a href="">LOGOUT</a>
 </div>
+<div>
+    <form action="http://localhost:5000/view_shopping_lists" method="post">
+
+                <div></br></br>
+                <input type="text" name="sl" placeholder="Name of shopping list to view"/>
+        </div>
+        
+        
+
+
+
+
+
+                <div><input type="submit" name="submit" value="View"/></br></div>
+
+
+
+
+        </div>
+        </form>
+  
+  </div></br>
 <div id="wrapper"></br>
 </br></br>
+
+  
 
 
 
         
                 
                 <div><p><i>items:</i></p></div>
+                </br>
+
+                <div>
+                  {% for rows in records %}
+                  <tr>
+                  
+                  <th><td> {{ rows }} </td></th>
+                  </tr>
+                  {% endfor %}
+                </div>
 
 
         

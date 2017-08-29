@@ -16,6 +16,7 @@ def create_shopping_list():
 
 @app.route('/create_shop_list', methods=['POST','GET'])
 def create_sl():
+    '''creates a shopping list which is a file object container'''
     if request.method=='POST':
         my_sl=ShoppingList()
         result=request.form
@@ -23,16 +24,33 @@ def create_sl():
         desc=result['desc']
         my_sl.create(sl,desc)
         flash('Shopping list created successfully')
-        return redirect(url_for('create_shopping_list'))
+        return render_template('create_shopping_list.html')
     else:
         flash('Your shopping list failed to create')
-        return redirect(url_for('create_shopping_list'))
+        return render_template('create_shopping_list.html')
 
 
 
-@app.route('/delete_shopping_list')
+@app.route('/delete_shopping_list',methods=['POST','GET'])
 def delete_shopping_list():
-    return render_template('delete_shopping_list.html')
+    '''receives name of a shopping list which is a file object and opens it for writing
+    hence effectively deleting the items in the whole list'''
+    if request.method == 'POST':
+        current_file=request.form['delitem']
+        try:
+            with open(current_file+'.txt','w') as f:
+                pass
+            flash("successfully deleted all items in Shopping List")
+                
+            return render_template('delete_shopping_list.html')
+        except FileNotFoundError as fne:
+            flash('The shopping list name entered was not found')
+            return render_template('delete_shopping_list.html')
+    else:
+        flash('Error while processing your request')
+        return render_template('delete_shopping_list.html')
+
+    
     
 
 @app.route('/delete_shopping_list_item')
@@ -89,7 +107,7 @@ def registration():
 
 @app.route('/shared_shopping_lists')
 def shared_shopping_lists():
-    return render_template('shared_shopping_lists.hml')
+    return render_template('shared_shopping_lists.html')
     
 
 @app.route('/update_shopping_list')
@@ -107,12 +125,25 @@ def view_shopping_list_items():
     return render_template('view_shopping_list_items.html')
     
 
-@app.route('/view_shopping_lists')
+@app.route('/view_shopping_lists',methods=['POST','GET'])
 def view_shopping_lists():
     #try to pass arguments which will make the viewer render the read objects dynamically
-    my_ls=ShoppingList()
-    records=my_ls.show()
-    return render_template('view_shopping_lists.html',records=records)
+    if request.method == 'POST':
+        current_file=request.form['sl']
+        try:
+            with open(current_file+'.txt','r') as f:
+                records=[]
+                for items in f:
+                    records.append(items)
+            return render_template('view_shopping_lists.html',records=records)
+        except FileNotFoundError as fne:
+            flash('The shopping list name entered was not found')
+            return render_template('view_shopping_lists.html')
+    else:
+        flash('Invalid response')
+        return render_template('view_shopping_lists.html')
+
+
     
 
 

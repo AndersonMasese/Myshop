@@ -28,28 +28,29 @@
 <!--<div id="wrapper"><p>Welcome to Myshop</p></div>-->
 
     
-    
-     <div id="wrapper">
+<div id="wrapper">
 
 
-
-
-        <form action="http://localhost/5000/login" method="post">
-            <fieldset> </br></br>
-                <legend>Welcome to Myshop!</legend>
+<form action="http://localhost:5000/login" method="post">
+            <fieldset> 
+                <legend>Log into Myshop</legend>
                 </br>
                 <div>
-                    <input type="text" name="username" placeholder="email address"/>
+                    <input type="text" name="username" placeholder="Name"/>
                 </div>
                 <div>
-                    <input type="text" name="password" placeholder="password"/>
+                    <input type="text" name="pword" placeholder="password"/>
                 </div>
+                
                 
                 
                 
                   
                 <input type="submit" name="submit" value="Login"/></br>
-                <i>Non Member? Register <a href="">here</a></i>
+                <div>
+                    <p>Not member yet?<a href="{{url_for('usereg')}}">Register Here</a></p>
+                </div>
+                
             </fieldset>    
         </form>
     </div>
