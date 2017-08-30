@@ -15,28 +15,30 @@
 </head>
 <body bgcolor="#babcc1">
 
+
 <div id='cssmenu'>
 <ul>
    
    
   <li class='active'><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>  
-  <li><a href="">Create shopping list  | </a></li>
-  <li><a  href="">View my shopping lists   | </a></li>
-  <li><a href="">Update shopping list          |</a></li>
-  <li><a href="">Delete shopping list   | </a></li>
-  <li><a href="">Shared shopping lists  </a></li>
+  <li><a href="{{url_for('create_shopping_list')}}">Create shopping list  | </a></li>
+  <li><a  href="{{url_for('view_shopping_lists')}}">View my shopping lists   | </a></li>
+  <li><a href="{{url_for('update_shopping_list')}}">Update shopping list          |</a></li>
+  <li><a href="{{url_for('delete_shopping_list')}}">Delete shopping list   | </a></li>
+  <li><a href="{{url_for('shared_shopping_lists')}}">Shared shopping lists  </a></li>
    
    
 </ul>
 </div>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="">Add item to shopping list</a>
-  <a href="">Update items in shopping list</a>
-  <a href="">View items in shopping list</a>
-  <a href="">Delete items in shopping list</a>
-  <a href="">LOGOUT</a>
+  <a href="{{url_for('add_shopping_list_item')}}">Add item to shopping list</a>
+  <a href="{{url_for('update_shopping_list_item')}}">Update items in shopping list</a>
+  <a href="{{url_for('view_shopping_list_items')}}">View items in shopping list</a>
+  <a href="{{url_for('delete_shopping_list_item')}}">Delete items in shopping list</a>
+  <a href="{{url_for('logout')}}">Log out</a>
 </div>
+
 <div id="wrapper"></br>
 
 

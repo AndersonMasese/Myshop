@@ -20,55 +20,66 @@
    
    
   <li class='active'><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>  
-  <li><a href="">Create shopping list  | </a></li>
-  <li><a  href="">View my shopping lists   | </a></li>
-  <li><a href="">Update shopping list          |</a></li>
-  <li><a href="">Delete shopping list   | </a></li>
-  <li><a href="">Shared shopping lists  </a></li>
+  <li><a href="{{url_for('create_shopping_list')}}">Create shopping list  | </a></li>
+  <li><a  href="{{url_for('view_shopping_lists')}}">View my shopping lists   | </a></li>
+  <li><a href="{{url_for('update_shopping_list')}}">Update shopping list          |</a></li>
+  <li><a href="{{url_for('delete_shopping_list')}}">Delete shopping list   | </a></li>
+  <li><a href="{{url_for('shared_shopping_lists')}}">Shared shopping lists  </a></li>
    
    
 </ul>
 </div>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="">Add item to shopping list</a>
-  <a href="">Update items in shopping list</a>
-  <a href="">View items in shopping list</a>
-  <a href="">Delete items in shopping list</a>
-  <a href="">LOGOUT</a>
+  <a href="{{url_for('add_shopping_list_item')}}">Add item to shopping list</a>
+  <a href="{{url_for('update_shopping_list_item')}}">Update items in shopping list</a>
+  <a href="{{url_for('view_shopping_list_items')}}">View items in shopping list</a>
+  <a href="{{url_for('delete_shopping_list_item')}}">Delete items in shopping list</a>
+  <a href="{{url_for('logout')}}">Log out</a>
 </div>
 <div id="wrapper"></br>
-<i>My Available shopping lists:</i></br></br>
+<i>Available shopping lists:</i></br></br>
+<table>
+{% for  lines in records %}
+
+
+<th> {{ lines+'   ' }} </th>
+
+{% endfor %}
+</table></br></br>
+
+<div><i>Select one shopping list from the ones given above add an item into it</i></div>
+<div>
+          <form action="http://localhost:5000/add_shopping_list_item" method='post'>
+                    <input type="text" name="list" placeholder="Name of shopping list to add"/>
+                    <div>
+                            <input type="text" name="item" placeholder="Item to add"/>
+                    </div>
+                </div>
+                <div><input type="submit" name="submit" value="Add"/></br></div>
+
+          </form>
+
+
+
+    </div>
+    </br>
+
+    <div>
+      <table>
+{% for  lines in entries %}
+
+
+<th> {{ lines+'   ' }} </th>
+
+{% endfor %}
+</table>
+
+    </div>
 
 
 
         
-
-                </br></br>
-                <p>Enter name of shopping list and item to add</p>
-
-                <div></br></br>
-                <input type="text" name="sl" placeholder="Name of shopping list to add to"/>
-        </div>
-        <div>
-                <input type="text" name="item" placeholder="Name of item to add"/>
-        </div>
-        <div>
-                <input type="text" name="cost" placeholder="cost of item in ksh."/>
-        </div>
-                
-
-
-
-
-
-                <div><input type="submit" name="submit" value="Add"/></br></div>
-
-
-
-
-        </div>
-
 
 
 </br></br>
