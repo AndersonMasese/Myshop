@@ -2,6 +2,7 @@
 from flask import Flask, redirect, url_for, request, render_template, session, flash
 from person import Person
 from shopping_list import ShoppingList
+from redundant import *
 
 user=Person()
 app=Flask(__name__)
@@ -32,6 +33,7 @@ def add_shopping_list_item():
             in_item=result['item']
             #now try to open a file with same name and populate our view function with the items in it
             try:
+                list_update(in_list,in_item)#creating a redundant shopping list as list object
                 with open(in_list+'.txt','a') as f:
                     f.write(in_item)
                     f.write('\n')
@@ -62,6 +64,7 @@ def create_sl():
         sl=result['sl']
         desc=result['desc']
         my_sl.create(sl,desc)
+        create(sl)#redundant create shopping list
         flash('Shopping list created successfully')
         return render_template('create_shopping_list.html')
     else:
@@ -114,15 +117,15 @@ def login():
         username=details['username']
         session['username']=details['username']
         pword=details['pword']
-        if username in user.validator():
-            
+        #if username in user.validator():
 
-        
+        if username in account and pword in account:
             return redirect(url_for('homepage'))
         else:
             return redirect(url_for('usereg'))
+            
     else:
-        var1=flash('Registration failed due to Internal server error')
+        flash('Registration failed due to Internal server error')
     return redirect(url_for('usereg'))
 
 @app.route('/usereg')
@@ -140,7 +143,8 @@ def registration():
         username=details['username']
         emailaddress=details['emailaddress']
         password=details['password']
-        user.register(username,emailaddress,password)
+        register(username,emailaddress,password)#registration completely moved from files to lists
+        #user.register(username,emailaddress,password)
         return redirect(url_for('homepage'))
     else:
         var1=flash('Registration failed due to Internal server error')
