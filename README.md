@@ -19,7 +19,7 @@ Then clone this repo:
 
     $ git clone https://www.github.com/AndersonMasese/Myshop
 
-Then run main.py cd Mysho/Designs/:
+Then run main.py cd Myshop/Designs/:
 
     $ python myshop.py
 
