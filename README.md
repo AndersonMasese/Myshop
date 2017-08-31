@@ -10,20 +10,37 @@ TODO: Write a Flask Shopping list management application
 Ensure you have python installed
 
 ```ruby
-set virtualenv to work with different versions of the python interpreter
+set virtualenv to work with different versions of the python interpreter but I recommend you use python 3+
 ```
 
 And then execute:
 
-    $ pip install Flask
+    $ pip install flask to setup flask either in your virtualenv or to path
 
-Then clone this repo:
+clone this repo:
 
-    $ git clone https://www.github.com/AndersonMasese/Myshop
+    $ git clone https://github.com/AndersonMasese/Myshop/tree/development
 
-Then run main.py cd Myshop/Designs/:
+enter the cloned directory and :
 
-    $ python myshop.py
+    $ cd/Designs
+
+run main.py :
+
+    $ python main.py
+
+open your browser and enter :
+
+    $ http://localhost:5000/
+
+
+
+
+## Credits
+
+[Anderson Kenyanya](https://github.com/AndersonMasese)
+
+[Daisy Wanjiru]()
 
 
 
