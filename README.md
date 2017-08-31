@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/AndersonMasese/Myshop.svg?branch=development)](https://travis-ci.org/AndersonMasese/Myshop)
 # Myshop
 ![alt tag](https://github.com/AndersonMasese/Myshop/blob/shopping_list1/Designs/templates/images/home.png "Index page")
 
