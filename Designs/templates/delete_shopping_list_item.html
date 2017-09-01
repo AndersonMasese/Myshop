@@ -39,21 +39,30 @@
 </div>
 <div id="wrapper"></br>
 <i>Available shopping lists:</i></br></br>
+<table>
+{% for  lines in records %}
 
 
+<th> {{ lines+'   ' }} </th>
 
+{% endfor %}
+</table></br></br>
+
+
+<form action="http://localhost:5000/delete_shopping_list_item" method='post'>
         <div>
-                    <input type="text" name="delitem" placeholder="Name of shopping list to delete"/>
+                    <input type="text" name="list" placeholder="Name of shopping list to delete"/>
                 </div>
 
                 <div>
-                    <input type="text" name="delitem" placeholder="Name of item to delete"/>
+                    <input type="text" name="item" placeholder="entry of item to be deleted"/>
                 </div>
                 <div><input type="submit" name="submit" value="Delete Item"/></br></div>
 
 
 
     </div>
+  </form>
 
 
 

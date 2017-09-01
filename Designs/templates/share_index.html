@@ -48,32 +48,24 @@
 {% endfor %}
 </table></br></br>
 
-
-<div><i>Select one shopping list from the ones given above to view items in them</i></div>
-<div></br></br>
-          <form action="http://localhost:5000/view_shopping_list_items" method='post'>
-                    <input type="text" name="list" placeholder="position of shopping list "/>
+<div><i>Select one shopping list from the ones given above to share with your friends</i></div>
+<div>
+          <form action="http://localhost:5000/add_shared_shopping_list" method='post'>
+                    <input type="text" name="list" placeholder="Name of shopping list to share"/>
+                    
                     
                 </div>
-                <div><input type="submit" name="submit" value="View"/></br></div>
+                <div><input type="submit" name="submit" value="Share"/></br></div>
 
           </form>
 
 
 
     </div>
-    </br></br>
+    </br>
 
     <div>
-      <p><i>Items in List:</i><p>
-      <table>
-{% for  lines in entries %}
-
-
-<tr><th><td> {{ lines+'   ' }} </td></th></tr>
-
-{% endfor %}
-</table>
+      
 
     </div>
 
