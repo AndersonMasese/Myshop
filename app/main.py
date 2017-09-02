@@ -2,7 +2,7 @@
 from flask import Flask, redirect, url_for, request, render_template, session, flash
 from . import *
 
-user=Person()
+#user=Person()
 app=Flask(__name__)
 app.secret_key='dfkdfjnhfubvhppnhjr'
 
