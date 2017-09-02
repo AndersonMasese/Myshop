@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset='utf-8'>
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="static/styles.css">
+  
+   <title>Myshop</title>
+   <style>
+       
+
+   </style>
+</head>
+<body>
+
+<div id='cssmenu'>
+<ul>
+   
+   
+    <li class='active'></li>
+  
+   
+</ul>
+</div>
+
+</br></br>
+<!--<div id="wrapper"><p>Welcome to Myshop</p></div>-->
+
+    
+<div id="wrapper">
+
+
+<form action="http://localhost:5000/login" method="post">
+            <fieldset> 
+                <legend>Log into Myshop</legend>
+                </br>
+                <div>
+                    <input type="text" name="username" placeholder="Name"/>
+                </div>
+                <div>
+                    <input type="password" name="pword" placeholder="password"/>
+                </div>
+                
+                
+                
+                
+                  
+                <input type="submit" name="submit" value="Login"/></br>
+                <div>
+                    <p>Not member yet?<a href="{{url_for('usereg')}}">Register Here</a></p>
+                </div>
+                
+            </fieldset>    
+        </form>
+    </div>
+    
+   
+
+</body>
+<html>
+    
