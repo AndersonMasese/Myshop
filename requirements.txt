@@ -23,7 +23,6 @@ pygame==1.9.3
 Pygments==2.2.0
 pylint==1.7.2
 pyparsing==2.2.0
-pypiwin32==220
 python-termstyle==0.1.10
 pytz==2017.2
 rednose==1.2.1
