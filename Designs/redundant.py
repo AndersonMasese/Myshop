@@ -1,7 +1,4 @@
-'''Due to the needs arising from completing the project on time, I have defined redundant.py
-which will hold replacement modules as I migrate from file based application to lists only web application. This modules
-so far will offer the capabilities of registration, creating a shopping list and adding items into
-a shopping list'''
+'''Driver module. All logic in main.py depends on this module for every functionality'''
 
 global account
 account=[]
