@@ -1,10 +1,8 @@
 '''Main flask app file for the Shopping list application challenge'''
 from flask import Flask, redirect, url_for, request, render_template, session, flash
-from person import Person
-from shopping_list import ShoppingList
-from redundant import *
+from . import *
 
-user=Person()
+#user=Person()
 app=Flask(__name__)
 app.secret_key='dfkdfjnhfubvhppnhjr'
 

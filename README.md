@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/AndersonMasese/Myshop.svg?branch=development)](https://travis-ci.org/AndersonMasese/Myshop)
-[![Coverage Status](https://coveralls.io/repos/github/AndersonMasese/Myshop/badge.svg?branch=master)](https://coveralls.io/github/AndersonMasese/Myshop?branch=master)
+[![Build Status](https://travis-ci.org/AndersonMasese/Myshop.svg?branch=release)](https://travis-ci.org/AndersonMasese/Myshop)
+[![Coverage Status](https://coveralls.io/repos/github/AndersonMasese/Myshop/badge.svg?branch=release)](https://coveralls.io/github/AndersonMasese/Myshop?branch=release)
 # Myshop
 ![alt tag](https://github.com/AndersonMasese/Myshop/blob/shopping_list1/Designs/templates/images/home.png "Index page")
 
@@ -23,7 +23,7 @@ clone this repo:
 
 enter the cloned directory and :
 
-    $ cd/Designs
+    $ Enter root directory
 
 run main.py :
 

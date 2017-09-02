@@ -3,8 +3,8 @@ import urllib
 from flask_testing import LiveServerTestCase
 from flask_testing import TestCase
 from flask import Flask
-from Designs.main import *
-from redundant import *
+from app.main import *
+from app.redundant import *
 
 
 
