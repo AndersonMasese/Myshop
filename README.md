@@ -23,7 +23,7 @@ clone this repo:
 
 enter the cloned directory and :
 
-    $ cd/Designs
+    $ Enter root directory
 
 run main.py :
 
