@@ -48,10 +48,12 @@
 {% endfor %}
 </table></br></br>
 
-<div><i>To see contents of of each shopping list, enter its name below.</i></div>
-<div>
-          <form action="http://localhost:5000/shared_shopping_lists" method='post'>
-                    <input type="text" name="item" placeholder="Name of shopping list to view"/>
+
+<div><i>Select one shopping list from the ones given above to view items in them</i></div>
+<div></br></br>
+          <form action="http://localhost:5000/view_shopping_list_items" method='post'>
+                    <input type="text" name="list" placeholder="position of shopping list "/>
+                    
                 </div>
                 <div><input type="submit" name="submit" value="View"/></br></div>
 
@@ -60,15 +62,15 @@
 
 
     </div>
-    </br>
+    </br></br>
 
     <div>
-      <p><i>available Items</i></p>
+      <p><i>Items in List:</i><p>
       <table>
 {% for  lines in entries %}
 
 
-<tr><th> {{ lines+'   ' }} </th></tr>
+<tr><th><td> {{ lines+'   ' }} </td></th></tr>
 
 {% endfor %}
 </table>

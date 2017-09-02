@@ -37,57 +37,72 @@
   <a href="{{url_for('delete_shopping_list_item')}}">Delete items in shopping list</a>
   <a href="{{url_for('logout')}}">Log out</a>
 </div>
+<div>
+    <form action="http://localhost:5000/view_shopping_lists" method="post">
+
+                <div></br></br>
+                <input type="text" name="sl" placeholder="Name of shopping list to view"/>
+        </div>
+        
+        
+
+
+
+
+
+                <div><input type="submit" name="submit" value="MyView"/></br></div>
+                <i>OR</i>
+                
+
+
+
+
+
+        </div>
+        </form>
+        <div><a href="{{url_for('share_index')}}"><input type="submit" name="submit" value="Share"/></a></br></div>
+
+  
+  </div></br>
 <div id="wrapper"></br>
-<i>Available shopping lists:</i></br></br>
-<table>
-{% for  lines in records %}
+</br></br>
 
-
-<th> {{ lines+'   ' }} </th>
-
-{% endfor %}
-</table></br></br>
- <table>
-{% for  lines in entries %}
-
-
-<th> {{ lines+'   ' }} </th>
-
-{% endfor %}
-</table>
-
-
-<div><i>Select one shopping list from the ones given above to view items in them</i></div>
-<div></br></br>
-          <form action="http://localhost:5000/view_shopping_list_items" method='post'>
-                    <input type="text" name="list" placeholder="Name of shopping list to View"/>
-                    
-                </div>
-                <div><input type="submit" name="submit" value="View"/></br></div>
-
-          </form>
-
-
-
-    </div>
-    </br></br>
-
-    <div>
-      <p><i>Items in List:</i><p>
-      <table>
-{% for  lines in entries %}
-
-
-<tr><th><td> {{ lines+'   ' }} </td></th></tr>
-
-{% endfor %}
-</table>
-
-    </div>
+  
 
 
 
         
+                
+                <div><p><i>My existing shopping Lists:</i></p></div>
+                </br>
+
+                <div>
+                  {% for rows in records %}
+                  <tr>
+                  
+                  <th><td> {{ rows }} </td></th>
+                  </tr>
+                  {% endfor %}
+                </div><div><p><i>Items in List:</i></p></div>
+
+
+                <div>
+                  {% for rows in entries %}
+                  <tr>
+                  
+                  <th><td> {{ rows }} </td></th>
+                  </tr>
+                  {% endfor %}
+                </div>
+
+
+        
+                
+
+
+
+    </div>
+
 
 
 </br></br>

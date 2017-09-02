@@ -37,67 +37,50 @@
   <a href="{{url_for('delete_shopping_list_item')}}">Delete items in shopping list</a>
   <a href="{{url_for('logout')}}">Log out</a>
 </div>
-<div>
-    <form action="http://localhost:5000/view_shopping_lists" method="post">
-
-                <div></br></br>
-                <input type="text" name="sl" placeholder="Name of shopping list to view"/>
-        </div>
-        
-        
-
-
-
-
-
-                <div><input type="submit" name="submit" value="View"/></br></div>
-
-
-
-
-        </div>
-        </form>
-  
-  </div></br>
 <div id="wrapper"></br>
-</br></br>
-
-  
-
-
-
-        
-                
-                <div><p><i>My existing shopping Lists:</i></p></div>
-                </br>
-
-                <div>
-                  {% for rows in records %}
-                  <tr>
-                  
-                  <th><td> {{ rows }} </td></th>
-                  </tr>
-                  {% endfor %}
-                </div><div><p><i>Items in List:</i></p></div>
+<i>Available shopping lists:</i></br></br>
+<table>
+{% for  lines in records %}
 
 
-                <div>
-                  {% for rows in entries %}
-                  <tr>
-                  
-                  <th><td> {{ rows }} </td></th>
-                  </tr>
-                  {% endfor %}
+<th> {{ lines+'   ' }} </th>
+
+{% endfor %}
+</table></br></br>
+
+<div><i>Select one shopping list from the ones given above add an item into it</i></div>
+<div>
+          <form action="http://localhost:5000/add_shopping_list_item" method='post'>
+                    <input type="text" name="list" placeholder="Name of shopping list to add"/>
+                    <div>
+                            <input type="text" name="item" placeholder="Item to add"/>
+                    </div>
+                    
                 </div>
+                <div><input type="submit" name="submit" value="Add"/></br></div>
 
-
-        
-                
+          </form>
 
 
 
     </div>
+    </br>
 
+    <div>
+      <table>
+{% for  lines in entries %}
+
+
+<th> {{ lines+'   ' }} </th>
+
+{% endfor %}
+</table>
+
+    </div>
+
+
+
+        
 
 
 </br></br>

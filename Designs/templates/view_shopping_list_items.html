@@ -47,20 +47,12 @@
 
 {% endfor %}
 </table></br></br>
- <table>
-{% for  lines in entries %}
-
-
-<th> {{ lines+'   ' }} </th>
-
-{% endfor %}
-</table>
 
 
 <div><i>Select one shopping list from the ones given above to view items in them</i></div>
 <div></br></br>
           <form action="http://localhost:5000/view_shopping_list_items" method='post'>
-                    <input type="text" name="list" placeholder="Name of shopping list to View"/>
+                    <input type="text" name="list" placeholder="position of shopping list "/>
                     
                 </div>
                 <div><input type="submit" name="submit" value="View"/></br></div>

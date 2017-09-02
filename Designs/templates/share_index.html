@@ -39,22 +39,39 @@
 </div>
 <div id="wrapper"></br>
 <i>Available shopping lists:</i></br></br>
+<table>
+{% for  lines in records %}
 
 
+<th> {{ lines+'   ' }} </th>
 
-        <div>
-                    <input type="text" name="delitem" placeholder="Name of shopping list to delete"/>
+{% endfor %}
+</table></br></br>
+
+<div><i>Select one shopping list from the ones given above to share with your friends</i></div>
+<div>
+          <form action="http://localhost:5000/add_shared_shopping_list" method='post'>
+                    <input type="text" name="list" placeholder="Name of shopping list to share"/>
+                    
+                    
                 </div>
+                <div><input type="submit" name="submit" value="Share"/></br></div>
 
-                <div>
-                    <input type="text" name="delitem" placeholder="Name of item to delete"/>
-                </div>
-                <div><input type="submit" name="submit" value="Delete Item"/></br></div>
+          </form>
 
 
 
     </div>
+    </br>
 
+    <div>
+      
+
+    </div>
+
+
+
+        
 
 
 </br></br>

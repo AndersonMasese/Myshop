@@ -48,15 +48,14 @@
 {% endfor %}
 </table></br></br>
 
-<div><i>Select one shopping list from the ones given above add an item into it</i></div>
+<div><i>Select one shopping list from the ones given above to share with your friends</i></div>
 <div>
-          <form action="http://localhost:5000/add_shopping_list_item" method='post'>
-                    <input type="text" name="list" placeholder="Name of shopping list to add"/>
-                    <div>
-                            <input type="text" name="item" placeholder="Item to add"/>
-                    </div>
+          <form action="http://localhost:5000/add_shared_shopping_list" method='post'>
+                    <input type="text" name="list" placeholder="Name of shopping list to share"/>
+                    
+                    
                 </div>
-                <div><input type="submit" name="submit" value="Add"/></br></div>
+                <div><input type="submit" name="submit" value="Share"/></br></div>
 
           </form>
 
@@ -66,14 +65,7 @@
     </br>
 
     <div>
-      <table>
-{% for  lines in entries %}
-
-
-<th> {{ lines+'   ' }} </th>
-
-{% endfor %}
-</table>
+      
 
     </div>
 

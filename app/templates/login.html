@@ -31,27 +31,25 @@
 <div id="wrapper">
 
 
-<form action="http://localhost:5000/registration" method="post">
-            <fieldset> </br></br>
-                <legend>Register into Myshop</legend>
+<form action="http://localhost:5000/login" method="post">
+            <fieldset> 
+                <legend>Log into Myshop</legend>
                 </br>
                 <div>
                     <input type="text" name="username" placeholder="Name"/>
                 </div>
                 <div>
-                    <input type="text" name="emailaddress" placeholder="Email Address"/>
+                    <input type="password" name="pword" placeholder="password"/>
                 </div>
-                <div>
-                    <input type="text" name="password" placeholder="Choose Password"/>
-                </div>
-                <div>
-                    <input type="text" name="password2" placeholder="Confirm Password"/>
-                </div>
+                
                 
                 
                 
                   
-                <input type="submit" name="submit" value="Register"/></br>
+                <input type="submit" name="submit" value="Login"/></br>
+                <div>
+                    <p>Not member yet?<a href="{{url_for('usereg')}}">Register Here</a></p>
+                </div>
                 
             </fieldset>    
         </form>
