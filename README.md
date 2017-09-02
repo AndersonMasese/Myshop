@@ -23,7 +23,7 @@ clone this repo:
 
 enter the cloned directory and :
 
-    $ Enter root directory
+    $ cd/app
 
 run main.py :
 
