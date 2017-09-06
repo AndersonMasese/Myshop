@@ -1,8 +1,6 @@
 '''Main flask app file for the Shopping list application challenge'''
 from flask import Flask, redirect, url_for, request, render_template, session, flash
 from redundant import *
-
-# user=Person()
 app = Flask(__name__)
 app.secret_key = 'dfkdfjnhfubvhppnhjr'
 
@@ -10,23 +8,24 @@ app.secret_key = 'dfkdfjnhfubvhppnhjr'
 @app.route('/add_shopping_list_item', methods=['POST', 'GET'])
 def add_shopping_list_item():
     '''renders the html file of adding an item to a shopping list'''
-    if request.method=='GET':
+    if request.method == 'GET':
         in_list = request.args['adds']
-        session['added_list']=in_list
-        return render_template('add_shopping_list_item.html',records=in_list)
-    elif request.method=='POST':
+        session['added_list'] = in_list
+        return render_template('add_shopping_list_item.html', records=in_list)
+    elif request.method == 'POST':
         result = request.form
-        in_list=session['added_list']
+        in_list = session['added_list']
         in_item = result['list']
-        #add shopping list as dictionary key and in_list items
-        #as items in the dictionary
+        # add shopping list as dictionary key and in_list items
+        # as items in the dictionary
         my_items_dict = itemsdictionary[in_list]  # yields a list
         my_items_dict.append(in_item)
         new_items_dic = {in_list: my_items_dict}
         itemsdictionary.update(new_items_dic)
-        status='Successfully Added new item into shopping list'
+        status = 'Successfully Added new item into shopping list'
         return render_template('add_shopping_list_item.html', records=status)
         #in_item = result['item']
+
 
 @app.route('/create_shopping_list')
 def create_shopping_list():
@@ -63,7 +62,7 @@ def delete_shopping_list():
     '''receives name of a shopping list which is a file object and opens it for writing
     hence effectively deleting the items in the whole list'''
     if request.method == 'GET':
-        delete_list=request.args['shopping_list']
+        delete_list = request.args['shopping_list']
         del itemsdictionary[delete_list]
         flash('Shopping list delete success')
         return render_template('delete_shopping_list.html')
@@ -78,7 +77,7 @@ def delete_shopping_list_item():
     if request.method == 'GET':
         del_items = request.args['del_items']
         session['del_items'] = del_items
-        #show user what items are already in their shopping lists
+        # show user what items are already in their shopping lists
         item_list = itemsdictionary[del_items]
         return render_template('delete_shopping_list_item.html', records=item_list)
     elif request.method == 'POST':
@@ -87,13 +86,12 @@ def delete_shopping_list_item():
         in_item = result['item']
         # yields a list at key with this entry
         my_items_dict = itemsdictionary[del_items_list]
-        #now delete the specified item in the specified list which in namespace through GET
+        # now delete the specified item in the specified list which in namespace through GET
         my_items_dict.remove(in_item)
         new_items_dic = {del_items_list: my_items_dict}
         itemsdictionary.update(new_items_dic)
         status = 'Successfully Deleted item from dictionary'
         return render_template('delete_shopping_list_item.html', records=status)
-
 
 
 @app.route('/homepage')
@@ -268,12 +266,11 @@ def update_shopping_list_item():
 
 @app.route('/view_shopping_list_items', methods=['POST', 'GET'])
 def view_shopping_list_items():
-
     '''try to read an already available shared_lists.txt file
     for a list of shared files'''
     if request.method == 'GET':
         try:
-            my_items=request.args['items']
+            my_items = request.args['items']
             this_list = itemsdictionary[my_items]
             # returns a list since the dictionary store the values as lists which hold the shopping items
 
