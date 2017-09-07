@@ -3,10 +3,8 @@ import urllib
 from flask_testing import LiveServerTestCase
 from flask_testing import TestCase
 from flask import Flask
-from main import *
-from person import *
-from shopping_list import *
-from redundant import *
+from app.main import *
+from .redundant import *
 
 
 class Myshop(TestCase):
@@ -23,7 +21,6 @@ class Myshop(TestCase):
 
     def test_assert_not_process_the_template(self):
         response = self.client.get("templates/")
-
         assert "" != response.data
 
     def test_redundant_register_returns_list_object(self):
@@ -52,10 +49,6 @@ class Myshop(TestCase):
         '''test if the register function appends entered details into a list'''
         temp_list = register('a', 'b', 'c')
         self.assertIn('a', temp_list)
-
-    # def test_create_return_list_of_lists(self):
-        #'''Ensure that creating a room returns a list containing other lists'''
-
 
 if __name__ == '__main__':
     unittest.main()

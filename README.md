@@ -1,37 +1,44 @@
-[![Build Status](https://travis-ci.org/AndersonMasese/Myshop.svg?branch=release)](https://travis-ci.org/AndersonMasese/Myshop)
-[![Coverage Status](https://coveralls.io/repos/github/AndersonMasese/Myshop/badge.svg?branch=release)](https://coveralls.io/github/AndersonMasese/Myshop?branch=release)
+[![Build Status](https://travis-ci.org/AndersonMasese/Myshop.svg?branch=presentation)](https://travis-ci.org/AndersonMasese/Myshop)
+[![Coverage Status](https://coveralls.io/repos/github/AndersonMasese/Myshop/badge.svg?branch=presentation)](https://coveralls.io/github/AndersonMasese/Myshop?branch=presentation)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AndersonMasese/Myshop/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AndersonMasese/Myshop/?branch=master)
 # Myshop
-![alt tag](https://github.com/AndersonMasese/Myshop/blob/shopping_list1/Designs/templates/images/home.png "Index page")
+![alt tag](https://github.com/AndersonMasese/Myshop/blob/development1/app/static/home.png "Landing page")
 
 TODO: Write a Flask Shopping list management application
 
 ## Installation
 
-Ensure you have python installed
+You'll need `python 3.*` to run the application
 
-```ruby
-set virtualenv to work with different versions of the python interpreter but I recommend you use python 3+
+Activate Virtual enviroment for installing requirements
+[virtualenv](https://virtualenv.pypa.io/en/stable/userguide/) setup instructions and usage
+
+```git
+ git clone https://github.com/AndersonMasese/Myshop.git
+ cd Myshop
+ pip install -r requirements.txt
+ python app/main.py
 ```
 
-And then execute:
-
-    $ pip install flask to setup flask either in your virtualenv or to path
-
-clone this repo:
-
-    $ git clone https://github.com/AndersonMasese/Myshop/tree/development
-
-enter the cloned directory and :
-
-    $ cd/app
-
-run main.py :
-
-    $ python main.py
 
 open your browser and enter :
 
     $ http://localhost:5000/
+
+## Notes
+
+
+| **Functionality**|**Explanation**|
+|:-------:|:--------:|
+| create shopping list | Creates a shopping list which associates the name and items as key and value pairs  |
+| add item | adds items into an existing shopping list |
+| delete item | deletes an item from an existing shopping list |
+| delete list | deletes the whole list |
+| update list | changes the name of the shopping list |
+| view items | viewing items in a given shopping list |
+| view shopping lists | viewing shopping lists |
+
+---
 
 
 
@@ -40,7 +47,13 @@ open your browser and enter :
 
 [Anderson Kenyanya](https://github.com/AndersonMasese)
 
-[Daisy Wanjiru]()
+[Daisy Wanjiru(LFA)]()
+
+[Boswell Gathu(LFA)]()
+
+[Andela](https://andela.com/)
+
+
 
 
 

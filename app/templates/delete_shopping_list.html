@@ -1,70 +1,76 @@
 <!doctype html>
 <html>
-<head>
-   <meta charset='utf-8'>
-   
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="static/styles.css">
-   <script src="static/styles.js" type="text/javascript"></script>
-  
-   <title>Myshop</title>
-   <style>
-       
 
-   </style>
+<head>
+  <meta charset='utf-8'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="static/styles.js" type="text/javascript"></script>
+
+  <title>Myshop</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.42em;
+      color: #A7A1AE;
+      background-color: #1F2739;
+    }
+  </style>
 </head>
+
 <body bgcolor="#babcc1">
 
-<div id='cssmenu'>
-<ul>
-   
-   
-  <li class='active'><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>  
-  <li><a href="{{url_for('create_shopping_list')}}">Create shopping list  | </a></li>
-  <li><a  href="{{url_for('view_shopping_lists')}}">View my shopping lists   | </a></li>
-  <li><a href="{{url_for('update_shopping_list')}}">Update shopping list          |</a></li>
-  <li><a href="{{url_for('delete_shopping_list')}}">Delete shopping list   | </a></li>
-  <li><a href="{{url_for('shared_shopping_lists')}}">Shared shopping lists  </a></li>
-   
-   
-</ul>
-</div>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{{url_for('add_shopping_list_item')}}">Add item to shopping list</a>
-  <a href="{{url_for('update_shopping_list_item')}}">Update items in shopping list</a>
-  <a href="{{url_for('view_shopping_list_items')}}">View items in shopping list</a>
-  <a href="{{url_for('delete_shopping_list_item')}}">Delete items in shopping list</a>
-  <a href="{{url_for('logout')}}">Log out</a>
-</div>
-<div id="wrapper"></br>
-<i></i></br></br>
+  <div id='cssmenu'>
+    <ul>
+
+
+      <li class='active'><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+      <li><a href="{{url_for('create_shopping_list')}}">Create shopping list  | </a></li>
+      <li><a href="{{url_for('dashboard')}}">My Dashboard   | </a></li>
+
+    </ul>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{{url_for('add_shopping_list_item')}}">Add item to shopping list</a>
+    <a href="{{url_for('update_shopping_list_item')}}">Update items in shopping list</a>
+    <a href="{{url_for('view_shopping_list_items')}}">View items in shopping list</a>
+    <a href="{{url_for('delete_shopping_list_item')}}">Delete items in shopping list</a>
+    <a href="{{url_for('logout')}}">Log out</a>
+  </div>
+  <div id="wrapper">
+    </br>
+    <i></i></br>
+    </br>
 
 
 
-        <div>
-          <form action="http://localhost:5000/delete_shopping_list" method='post'>
-                    <input type="text" name="delitem" placeholder="Name of shopping list to delete"/>
-                </div>
-                <div><input type="submit" name="submit" value="Delete"/></br></div>
-
-          </form>
-
-
-
+    <div>
+      <form action="http://localhost:5000/delete_shopping_list" method='post'>
+        <input type="text" name="delitem" placeholder="Name of shopping list to delete" />
+    </div>
+    <div><input type="submit" name="submit" value="Delete" /></br>
     </div>
 
+    </form>
 
 
-</br></br>
-<!--<div id="wrapper"><p>Welcome to Myshop</p></div>-->
 
-    
-    
-     
-    
-   
+  </div>
+
+
+
+  </br>
+  </br>
+  <!--<div id="wrapper"><p>Welcome to Myshop</p></div>-->
+
+
+
+
+
+
 
 </body>
 <html>
-    
