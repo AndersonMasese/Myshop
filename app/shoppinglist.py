@@ -1,5 +1,5 @@
 '''This module executes the shop list characteristics as executed in main file'''
-from .person import Person
+from person import Person
 
 
 class ShoppingList(Person):
