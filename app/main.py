@@ -1,9 +1,9 @@
 '''Main flask app file for the Shopping list application challenge'''
 from flask import Flask, redirect, url_for, request, render_template, \
     session, flash
-from .person import Person
-from .sharelist import ShareList
-from .shoppinglist import ShoppingList
+from person import Person
+from sharelist import ShareList
+from shoppinglist import ShoppingList
 app = Flask(__name__)
 app.secret_key = 'dfkdfjnhfubvhppnhjr'
 this_person = Person()
@@ -88,7 +88,7 @@ def delete_shopping_list_item():
     deletes items in the specified dictionaries'''
     itemsdictionary = this_shoppinglist.add_items()
     if request.method == 'GET':
-        del_items = request.args['del_items']
+        del_items = request.args['shopping_list']
         session['del_items'] = del_items
         # show user what items are already in their shopping lists
         item_list = itemsdictionary[del_items]
