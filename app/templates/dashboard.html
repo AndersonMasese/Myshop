@@ -11,7 +11,7 @@
     <title>Myshop</title>
     <style>
         @charset "UTF-8";
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+        
         body {
             font-family: 'Open Sans', sans-serif;
             font-weight: 300;
@@ -180,10 +180,9 @@
 
 
 
-
-                    <td><a href="{{url_for('view_shopping_list_items',items=lines)}}">VIEW ITEMS</a></td>
                     <td><a href="{{url_for('add_shopping_list_item',adds=lines)}}">ADD ITEM</a></td>
-                    <td><a href="{{url_for('delete_shopping_list',shopping_list=lines)}}">DELETE LIST</a></td>
+                    <td><a href="{{url_for('view_shopping_list_items',items=lines)}}">VIEW ITEMS</a></td>
+                    <td><a href="{{url_for('delete_shopping_list_item',shopping_list=lines)}}">DELETE ITEM</a></td>
                     <td><a href="{{url_for('delete_shopping_list',shopping_list=lines)}}">DELETE LIST</a></td>
                     <td><a href="{{url_for('update_shopping_list',update_shopping_list=lines)}}">UPDATE LIST</a></td>
 
