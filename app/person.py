@@ -6,10 +6,13 @@ class Person:
 
     def register(self, username, emailaddress, password, *args):
         '''method for registering people into the common list'''
-        self.account.append(username)
-        self.account.append(emailaddress)
-        self.account.append(password)
-        return self.account
+        if type(username)!=str:
+            return 'only strings allowed for names'
+        else:
+            self.account.append(username)
+            self.account.append(emailaddress)
+            self.account.append(password)
+            return self.account
 
     def login(self):
         '''validate login credentials'''
