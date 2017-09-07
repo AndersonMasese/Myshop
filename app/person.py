@@ -1,24 +1,16 @@
-class Person:
-    '''
-    Class is controller of all login and registration activities
-    '''
-    def register(self,username,emailaddress,password):
-        '''method inserts the individual's details into a file'''
-        with open('user.txt', 'a') as f:
-            f.write(username)
-            f.write('\n')
-            f.write(emailaddress)
-            f.write('\n')
-            f.write(password)
-            f.write('\n')
-        
+'''This module contains class person which declares the basic attributes of user '''
 
-    def validator(self):
-        '''method opens file and returns the individual user contents'''
-        file_contents=[]
-        with open('user.txt','r') as f:
-            for lines in f:
-                #file_contents.append(lines)
-                #return file_contents
-                return lines
-            
+
+class Person:
+    account = []
+
+    def register(self, username, emailaddress, password, *args):
+        '''method for registering people into the common list'''
+        self.account.append(username)
+        self.account.append(emailaddress)
+        self.account.append(password)
+        return self.account
+
+    def login(self):
+        '''validate login credentials'''
+        return self.account
