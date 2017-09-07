@@ -3,7 +3,7 @@ import urllib
 from flask_testing import LiveServerTestCase
 from flask_testing import TestCase
 from flask import Flask
-from main import *
+from app.main import *
 from redundant import *
 
 
