@@ -4,7 +4,7 @@ from flask_testing import LiveServerTestCase
 from flask_testing import TestCase
 from flask import Flask
 from app.main import *
-from redundant import *
+from .redundant import *
 
 
 class Myshop(TestCase):
