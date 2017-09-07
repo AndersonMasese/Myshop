@@ -2,8 +2,8 @@
 from flask import Flask, redirect, url_for, request, render_template, \
     session, flash
 from .person import Person
-from sharelist import ShareList
-from shoppinglist import ShoppingList
+from .sharelist import ShareList
+from .shoppinglist import ShoppingList
 app = Flask(__name__)
 app.secret_key = 'dfkdfjnhfubvhppnhjr'
 this_person = Person()
