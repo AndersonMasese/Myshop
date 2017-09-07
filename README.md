@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/AndersonMasese/Myshop.svg?branch=release)](https://travis-ci.org/AndersonMasese/Myshop)
 [![Coverage Status](https://coveralls.io/repos/github/AndersonMasese/Myshop/badge.svg?branch=release)](https://coveralls.io/github/AndersonMasese/Myshop?branch=release)
 # Myshop
-![alt tag](https://github.com/AndersonMasese/Myshop/blob/shopping_list1/Designs/templates/images/home.png "Index page")
+![alt tag](https://github.com/AndersonMasese/Myshop/blob/development1/app/static/home.png "Landing page")
 
 TODO: Write a Flask Shopping list management application
 
@@ -13,17 +13,19 @@ Ensure you have python installed
 set virtualenv to work with different versions of the python interpreter but I recommend you use python 3+
 ```
 
-And then execute:
 
-    $ pip install flask to setup flask either in your virtualenv or to path
 
 clone this repo:
 
-    $ git clone https://github.com/AndersonMasese/Myshop/tree/development
+    $ git clone https://github.com/AndersonMasese/Myshop
 
 enter the cloned directory and :
 
     $ cd/app
+    
+And then execute:
+
+    $ Install requirements from requirements.txt file: pip install requirements.txt
 
 run main.py :
 
@@ -41,6 +43,8 @@ open your browser and enter :
 [Anderson Kenyanya](https://github.com/AndersonMasese)
 
 [Daisy Wanjiru]()
+
+[Boswell Gathu]()
 
 
 
