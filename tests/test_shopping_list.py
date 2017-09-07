@@ -1,5 +1,5 @@
 import unittest
-from app.shoppinglist import shoppinglist
+from app.shoppinglist import Shoppinglist
 
 
 class ThisPerson(unittest.TestCase):
