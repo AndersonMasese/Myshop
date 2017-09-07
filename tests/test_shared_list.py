@@ -1,5 +1,5 @@
 import unittest
-from app.sharelist import ShareList
+from .app.sharelist import ShareList
 
 
 class ThisPerson(unittest.TestCase):
