@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/AndersonMasese/Myshop.svg?branch=presentation)](https://travis-ci.org/AndersonMasese/Myshop)
 [![Coverage Status](https://coveralls.io/repos/github/AndersonMasese/Myshop/badge.svg?branch=presentation)](https://coveralls.io/github/AndersonMasese/Myshop?branch=presentation)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AndersonMasese/Myshop/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AndersonMasese/Myshop/?branch=master)
 # Myshop
 ![alt tag](https://github.com/AndersonMasese/Myshop/blob/development1/app/static/home.png "Landing page")
 
