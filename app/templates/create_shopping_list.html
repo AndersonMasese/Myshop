@@ -10,7 +10,15 @@
 
         <title>Myshop</title>
         <style>
-
+                @charset "UTF-8";
+                @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+                body {
+                        font-family: 'Open Sans', sans-serif;
+                        font-weight: 300;
+                        line-height: 1.42em;
+                        color: #A7A1AE;
+                        background-color: #1F2739;
+                }
         </style>
 </head>
 
@@ -47,21 +55,26 @@
 
                 </br>
                 </br>
-                <form action="http://localhost:5000/create_shop_list" method="post">
+                <table>
+                        <form action="http://localhost:5000/create_shop_list" method="post">
 
-                        <div>
-                                </br>
-                                </br>
-                                <input type="text" name="sl" placeholder="Name of shopping list to create" />
-                        </div>
-                        <div><input type="submit" name="submit" value="Create" /></br>
-                        </div>
+                                <div>
+                                        </br>
+                                        </br>
+                                        <input type="text" name="sl" placeholder="Name of shopping list to create" />
+                                </div>
+                                <div>
+                                        <input type="submit" name="submit" value="Create" />
+                                        </br>
+
+                                </div>
 
 
 
 
         </div>
         </form>
+        </table>
 
 
 

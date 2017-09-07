@@ -155,10 +155,6 @@
         </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="{{url_for('add_shopping_list_item')}}">Add item to shopping list</a>
-            <a href="{{url_for('update_shopping_list_item')}}">Update items in shopping list</a>
-            <a href="{{url_for('view_shopping_list_items')}}">View items in shopping list</a>
-            <a href="{{url_for('delete_shopping_list_item')}}">Delete items in shopping list</a>
             <a href="{{url_for('logout')}}">Log out</a>
         </div>
     </div>
@@ -184,10 +180,14 @@
 
 
 
-                    <td><a href="{{url_for('add_shopping_list_item',adds=lines)}}">ADD ITEM</a></td>
+
                     <td><a href="{{url_for('view_shopping_list_items',items=lines)}}">VIEW ITEMS</a></td>
-                    <td><a href="{{url_for('delete_shopping_list_item',del_items=lines)}}">DELETE ITEM</a></td>
+                    <td><a href="{{url_for('add_shopping_list_item',adds=lines)}}">ADD ITEM</a></td>
                     <td><a href="{{url_for('delete_shopping_list',shopping_list=lines)}}">DELETE LIST</a></td>
+                    <td><a href="{{url_for('delete_shopping_list',shopping_list=lines)}}">DELETE LIST</a></td>
+                    <td><a href="{{url_for('update_shopping_list',update_shopping_list=lines)}}">UPDATE LIST</a></td>
+
+
                 </tr>
                 {% endfor %}
 
