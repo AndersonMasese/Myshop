@@ -51,7 +51,7 @@ open your browser and enter :
 
 [Boswell Gathu(LFA)]()
 
-[Andela](https://andela.com/)
+
 
 
 
